@@ -43,7 +43,7 @@ namespace API
             services.AddCors(
                opt =>
                {
-                   opt.AddPolicy("CorePolicy", policy =>
+                   opt.AddPolicy("CorsPolicy", policy =>
                     {
                         policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
                     });
@@ -62,7 +62,7 @@ namespace API
 
             app.UseRouting();
             app.UseStaticFiles();
-            app.UseCors("CorePolicy");
+            app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseSwaggerDocumentation();
